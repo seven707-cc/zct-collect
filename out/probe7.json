@@ -1,0 +1,40 @@
+{
+ "wenxuecity": {
+  "wxc_search": {
+   "status": 403,
+   "hits": []
+  },
+  "bbs_search": {
+   "status": 403,
+   "hits": []
+  },
+  "bbs_filmtv": {
+   "status": 403,
+   "hits": []
+  }
+ },
+ "hk01": {
+  "https://www.hk01.com/search?q=%E4%B8%AD%E9%A4%90%E5%8E%85": {
+   "status": 200,
+   "hits": []
+  },
+  "https://www.hk01.com/api/search?q=%E4%B8%AD%E9%A4%90%E5%8E%85": {
+   "status": 404,
+   "hits": []
+  }
+ },
+ "uwants": {
+  "https://www.uwants.com/forumdisplay.php?fid=659": {
+   "status": 410,
+   "hits": []
+  },
+  "https://www.uwants.com/search.php?srchtxt=%E4%B8%AD%E9%A4%90%E5%8E%85": {
+   "status": 200,
+   "hits": []
+  },
+  "https://www.uwants.com/forum.php?mod=forumdisplay&fid=659": {
+   "status": 410,
+   "hits": []
+  }
+ }
+}
