@@ -69,6 +69,9 @@ jobs:
           # 可选：仓库 Settings → Secrets 里加 YT_COOKIES，
           # 内容是 cookies.txt 全文或 base64。用于绕过 runner IP 的机器人校验。
           YT_COOKIES: ${{ secrets.YT_COOKIES }}
+          # 可选：住宅代理，形如 http://user:pass@host:port
+          # runner 在境外，国内买的海外住宅代理可以正常使用（不受大陆网络限制）。
+          YT_PROXY: ${{ secrets.YT_PROXY }}
         run: python collect_yt.py
 
       - name: Upload artifact
