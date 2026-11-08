@@ -1,0 +1,20 @@
+name: probe-platforms
+on: {workflow_dispatch: {}}
+permissions: {contents: write}
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install -U pip requests
+      - run: python probe_platforms.py
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "bot"; git config user.email "bot@example.com"
+          mkdir -p out && git add -f out/probe_platforms.json || true
+          git commit -m "probe: $(date -u +%FT%TZ)" || echo nothing
+          git push || echo fail
