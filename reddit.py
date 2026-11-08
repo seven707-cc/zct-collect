@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Reddit 采集：搜索《中餐厅9》相关帖子，抓评论。
+"""Reddit 采集（走 Arctic Shift 归档库，绕过 Reddit 官方 403）。
 
-Reddit 公开 JSON 接口无需登录：
-  - /search.json?q=...&sort=relevance&t=year
-  - /comments/{post_id}.json?limit=200&depth=2
+端点（免认证）：
+  /api/posts/search?subreddit=...&query=...&after=...&limit=auto
+  /api/comments/tree?link_id=t3_<post_id>&limit=25000   ← 整棵评论树
 
-输出 out/raw_reddit.jsonl，字段与项目内 Comment 模型一致。
+注意：keyword 参数必须和 subreddit 一起用；limit 最大 100（auto 可到 1000）。
 """
 from __future__ import annotations
 
@@ -16,67 +16,77 @@ import time
 import requests
 
 OUT_DIR = os.environ.get("OUT_DIR", "out")
+BASE = "https://arctic-shift.photon-reddit.com/api"
 S = requests.Session()
-S.headers.update({"User-Agent": "academic-research-bot/0.1 (cultural communication study)"})
+S.headers.update({"User-Agent": "cultural-research/1.0"})
 
-QUERIES = [
-    '"Chinese Restaurant" S9',
-    '"Chinese Restaurant" Africa MangoTV',
-    '"Chinese Restaurant" Ding Yuxi',
-    '"中餐厅9"',
-    '"中餐厅" 摩洛哥',
-    '"The Chinese Restaurant" variety Morocco',
-    '"Chinese Restaurant" season 9 cdrama',
-    '"Chinese Restaurant" huang xiaoming 2025',
+# 目标版块 × 搜索词
+TASKS = [
+    ("cdrama", "Chinese Restaurant"),
+    ("cdrama", "Chinese Restaurant S9"),
+    ("cdramafans", "Chinese Restaurant"),
+    ("ChineseDrama", "Chinese Restaurant"),
+    ("cdtv", "Chinese Restaurant"),
+    ("morocco", "Chinese Restaurant"),
+    ("tangier", "中餐厅"),
+    ("morocco", "中餐厅"),
+    ("cdrama", "Ding Yuxi restaurant"),
+    ("cdrama", "Huang Xiaoming restaurant"),
+    ("ChineseFood", "Chinese Restaurant show"),
 ]
-MAX_POSTS_PER_QUERY = 50
-MAX_COMMENTS_PER_POST = 200
+AFTER = "2025-05-01"          # 节目 2025 年 5 月开播
+MIN_COMMENTS = 3              # 帖子至少 3 条评论才抓
+KEEP_TERMS = ["restaurant", "s9", "season 9", "africa", "morocco", "tangier",
+              "中餐厅", "中餐廳", "ding yuxi", "huang xiaoming", "mangotv"]
 
 
-def jget(url: str, params: dict | None = None, tries: int = 3) -> dict | list | None:
+def jget(url: str, params: dict, tries: int = 3):
     for i in range(tries):
         try:
-            r = S.get(url, params=params, timeout=25)
+            r = S.get(url, params=params, timeout=40)
             if r.status_code == 200:
                 return r.json()
-            if r.status_code == 429:
-                time.sleep(5 + i * 5)
+            if r.status_code == 422:
+                time.sleep(3 + i * 4)
                 continue
-            print(f"  HTTP {r.status_code} {url[:80]}")
+            print(f"    HTTP {r.status_code} {str(params)[:90]}")
             return None
         except Exception as e:
-            print(f"  err {str(e)[:70]}")
+            print(f"    err {str(e)[:70]}")
             time.sleep(2)
     return None
 
 
-def search_posts(q: str) -> list[dict]:
-    out = []
-    d = jget("https://www.reddit.com/search.json",
-             {"q": q, "sort": "relevance", "t": "year", "limit": 100})
-    if not d:
-        return out
-    for ch in d.get("data", {}).get("children", []):
-        d0 = ch.get("data", {})
-        out.append({
-            "id": d0.get("id"),
-            "title": d0.get("title") or "",
-            "selftext": (d0.get("selftext") or "")[:2000],
-            "subreddit": d0.get("subreddit_name_prefixed") or "",
-            "score": d0.get("score") or 0,
-            "num_comments": d0.get("num_comments") or 0,
-            "created_utc": d0.get("created_utc") or 0,
-            "url": d0.get("url") or "",
-            "permalink": d0.get("permalink") or "",
-        })
+def search_posts(sub: str, query: str) -> list[dict]:
+    """分页抓全部匹配帖子。"""
+    out, after = [], AFTER
+    while True:
+        d = jget(f"{BASE}/posts/search",
+                 {"subreddit": sub, "query": query, "after": after,
+                  "limit": "auto", "sort": "asc",
+                  "fields": "id,title,selftext,subreddit,score,num_comments,created_utc,permalink"})
+        rows = (d or {}).get("data") or []
+        if not rows:
+            break
+        out += rows
+        if len(rows) < 100:
+            break
+        after = rows[-1]["created_utc"] + 1
+        time.sleep(0.8)
     return out
 
 
-def flatten(children: list, out: list, depth: int = 0):
-    for ch in children or []:
-        if ch.get("kind") != "t1":
+def comment_tree(post_id: str) -> list[dict]:
+    d = jget(f"{BASE}/comments/tree", {"link_id": f"t3_{post_id}", "limit": 25000,
+                                       "start_depth": 6, "start_breadth": 6})
+    return (d or {}).get("data") or []
+
+
+def flatten(nodes: list, out: list, depth: int = 0):
+    for nd in nodes or []:
+        if nd.get("kind") != "t1":
             continue
-        d = ch.get("data", {})
+        d = nd.get("data", {})
         body = (d.get("body") or "").strip()
         if body and body not in ("[removed]", "[deleted]"):
             out.append({
@@ -87,50 +97,42 @@ def flatten(children: list, out: list, depth: int = 0):
                 "depth": depth,
                 "parent": d.get("parent_id") or "",
                 "created_utc": d.get("created_utc") or 0,
-                "awards": d.get("total_awards_received") or 0,
             })
-        replies = (d.get("replies") or {}).get("data", {}).get("children", [])
-        if replies and depth < 1:
-            flatten(replies, out, depth + 1)
+        flatten(d.get("children") or [], out, depth + 1)
 
 
-def fetch_comments(post_id: str) -> list[dict]:
-    d = jget(f"https://www.reddit.com/comments/{post_id}.json",
-             {"limit": MAX_COMMENTS_PER_POST, "depth": 2, "sort": "top"})
-    if not isinstance(d, list) or len(d) < 2:
-        return []
-    out: list[dict] = []
-    flatten(d[1].get("data", {}).get("children", []), out)
-    return out
+def relevant(p: dict) -> bool:
+    t = (p.get("title", "") + " " + (p.get("selftext") or "")[:400]).lower()
+    return any(k in t for k in KEEP_TERMS)
 
 
 def main() -> int:
     os.makedirs(OUT_DIR, exist_ok=True)
     posts: dict[str, dict] = {}
-    for q in QUERIES:
-        ps = search_posts(q)
-        print(f"[search] {q} -> {len(ps)}")
-        for p in ps:
+    for sub, q in TASKS:
+        ps = search_posts(sub, q)
+        keep = [p for p in ps if relevant(p) and (p.get("num_comments") or 0) >= MIN_COMMENTS]
+        print(f"[search] r/{sub:<14} q={q:<26} -> {len(ps):>3} 帖, 保留 {len(keep)}")
+        for p in keep:
             posts.setdefault(p["id"], p)
-        time.sleep(2)
+        time.sleep(0.6)
 
-    # 只保留有讨论量的
-    posts = {k: v for k, v in posts.items() if v["num_comments"] >= 3}
     print(f"\n候选帖子 {len(posts)} 条")
-    for p in sorted(posts.values(), key=lambda x: -x["num_comments"])[:20]:
-        print(f"  r/{p['subreddit'][2:]:<22} c={p['num_comments']:<4} {p['title'][:70]}")
+    for p in sorted(posts.values(), key=lambda x: -(x.get("num_comments") or 0))[:20]:
+        print(f"  r/{p['subreddit']:<16} c={p.get('num_comments'):<4} {p['title'][:70]}")
 
     rows: list[dict] = []
-    for i, (pid, p) in enumerate(sorted(posts.items(), key=lambda kv: -kv[1]["num_comments"]), 1):
-        print(f"\n[{i}/{len(posts)}] {pid} {p['title'][:60]}")
-        cs = fetch_comments(pid)
+    plist = sorted(posts.items(), key=lambda kv: -(kv[1].get("num_comments") or 0))
+    for i, (pid, p) in enumerate(plist, 1):
+        print(f"\n[{i}/{len(plist)}] {pid} {p['title'][:60]}")
+        cs = flatten(comment_tree(pid), [])
         print(f"  => {len(cs)} 条评论")
         for c in cs:
             rows.append({
                 "platform": "Reddit",
                 "platform_region": "海外",
                 "video_id": pid,
-                "video_title": f"[{p['subreddit']}] {p['title']}",
+                "video_title": f"[r/{p['subreddit']}] {p['title']}",
                 "cid": c["cid"],
                 "publish_time": time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(c["created_utc"]))
                 if c["created_utc"] else "",
@@ -140,14 +142,15 @@ def main() -> int:
                 "like": c["like"],
                 "reply_count": 0,
                 "parent_cid": c["parent"],
-                "raw": {"depth": c["depth"], "post_score": p["score"],
-                        "post_comments": p["num_comments"], "subreddit": p["subreddit"],
-                        "post_url": "https://www.reddit.com" + p["permalink"]},
+                "raw": {"depth": c["depth"], "post_score": p.get("score"),
+                        "post_comments": p.get("num_comments"),
+                        "subreddit": "r/" + p["subreddit"],
+                        "post_url": "https://www.reddit.com" + (p.get("permalink") or "")},
             })
         with open(os.path.join(OUT_DIR, "raw_reddit.jsonl"), "w", encoding="utf-8") as f:
             for r in rows:
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
-        time.sleep(1.5)
+        time.sleep(0.8)
 
     print(f"\n合计 {len(rows)} 条评论 / {len(posts)} 条帖子")
     with open(os.path.join(OUT_DIR, "reddit_posts.json"), "w", encoding="utf-8") as f:
