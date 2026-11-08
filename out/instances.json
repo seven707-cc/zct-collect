@@ -21,7 +21,7 @@
       "kind": "invidious",
       "base": "https://inv.zzls.xyz",
       "n": 20,
-      "sec": 1.0,
+      "sec": 1.1,
       "total": 1196,
       "sample": "我是来看丁禹兮的。 \n虽然努力工作，但看到他既赚不到钱，又不能好好吃饭的样子，心里很不是滋味。 😢😢😢\n辛苦了。  加油"
     },
@@ -29,7 +29,7 @@
       "kind": "invidious",
       "base": "https://invidious.materialio.us",
       "n": 20,
-      "sec": 1.1,
+      "sec": 1.0,
       "total": 1196,
       "sample": "我是来看丁禹兮的。 \n虽然努力工作，但看到他既赚不到钱，又不能好好吃饭的样子，心里很不是滋味。 😢😢😢\n辛苦了。  加油"
     },
@@ -37,7 +37,7 @@
       "kind": "piped",
       "base": "https://api.piped.private.coffee",
       "n": 20,
-      "sec": 0.8,
+      "sec": 5.6,
       "total": 1196,
       "sample": "我是来看丁禹兮的。 <br>虽然努力工作，但看到他既赚不到钱，又不能好好吃饭的样子，心里很不是滋味。 😢😢😢<br>辛苦"
     },
@@ -45,7 +45,7 @@
       "kind": "piped",
       "base": "https://pipedapi.ducks.party",
       "n": 20,
-      "sec": 0.9,
+      "sec": 0.7,
       "total": 1196,
       "sample": "yueyue&apos;s english is so cute, you&apos;re doing great yu"
     }
