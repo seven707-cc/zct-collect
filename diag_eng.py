@@ -6,7 +6,8 @@ import time
 
 import yt_instances as yi
 
-IDS = os.environ.get("IDS", "").split(",") or [
+_env = [x.strip() for x in os.environ.get("IDS", "").split(",") if x.strip()]
+IDS = _env or [
     "MU0qexL9obc", "MYRHo-E79iw", "DdatAHPrCzQ", "NCDdX40qwZg", "tWlL8G8EOu4",
     "lJtttygX7D0", "XpjPAWu522E", "wGDus41Zqlo", "eZNmawxqg9Y", "2UIP3nZ0hkU",
     "GE2KqInXXgY", "JYT37xL8xRw", "Jyu-4V_e0qQ", "KZoXMNwSU88",
