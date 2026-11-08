@@ -1,0 +1,60 @@
+{
+ "proxitok": {
+  "https://proxitok.pabloferreiro.es": {
+   "err": "HTTPSConnectionPool(host='proxitok.pabloferreiro.es', port=443): Max retries exceeded with url: / (C"
+  },
+  "https://proxitok.privacydev.net": {
+   "err": "HTTPSConnectionPool(host='proxitok.privacydev.net', port=443): Max retries exceeded with url: / (Cau"
+  },
+  "https://proxitok.pussthecat.org": {
+   "err": "HTTPSConnectionPool(host='proxitok.pussthecat.org', port=443): Max retries exceeded with url: / (Cau"
+  },
+  "https://tok.artemislena.eu": {
+   "err": "HTTPSConnectionPool(host='tok.artemislena.eu', port=443): Max retries exceeded with url: / (Caused b"
+  },
+  "https://tok.hostux.net": {
+   "err": "HTTPSConnectionPool(host='tok.hostux.net', port=443): Max retries exceeded with url: / (Caused by Na"
+  },
+  "https://proxitok.esmailelbob.xyz": {
+   "err": "HTTPSConnectionPool(host='proxitok.esmailelbob.xyz', port=443): Max retries exceeded with url: / (Ca"
+  },
+  "https://tt.vern.cc": {
+   "err": "HTTPSConnectionPool(host='tt.vern.cc', port=443): Max retries exceeded with url: / (Caused by SSLErr"
+  },
+  "https://proxitok.lunar.icu": {
+   "status": 502
+  }
+ },
+ "forums": {
+  "discuss_hk": {
+   "status": 403,
+   "len": 5816,
+   "head": "    Just a moment...       *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:sy"
+  },
+  "uwants": {
+   "status": 200,
+   "len": 63571,
+   "head": " \n \n \n \n \n \n  Uwants.com  \n \n \n \n\n \n \n \n \n \n \n \n\n \n \n\n \n \n \n \n  \n{\n    \"@context\": \"https://schema.org\",\n    \"@type\": \"WebPage\",\n    \"url\": \"https://w"
+  },
+  "6park": {
+   "status": 200,
+   "len": 5377,
+   "head": " \r\n \r\n \r\n   \r\n   \r\n   页面中转 - 6park.com \r\n   \r\n   \r\n    :root {\r\n      --bg-1: #0f172a;\r\n      --bg-2: #111827;\r\n      --bg-3: #1e293b;\r\n      --primar"
+  },
+  "wenxuecity": {
+   "status": 200,
+   "len": 101162,
+   "head": " \n \n \n \n \n \n 文学城 | 论坛频道 bbs.wenxuecity.com \n \n \n \n \n \n \n \n \r\n        \r\n\t\r\n       \r\n       \r\n \n  \n  \n  \n  \n \n \n   //判断访问终端\n   var browser={\n      versi"
+  },
+  "cari": {
+   "status": 404,
+   "len": 1469,
+   "head": " \n  \n 404 Not Found \n  \n Not Found \n The requested URL was not found on this server. \n Additionally, a 404 Not Found\nerror was encountered while tryin"
+  },
+  "hk01": {
+   "status": 404,
+   "len": 447760,
+   "head": "          香港01｜hk01.com 倡議型媒體                                      \n  *,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-"
+  }
+ }
+}
