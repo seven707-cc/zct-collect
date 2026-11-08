@@ -1,0 +1,90 @@
+[
+  {
+    "label": "default",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.1,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "web_safari",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.4,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "android",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.1,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how t"
+  },
+  {
+    "label": "ios",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.1,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how t"
+  },
+  {
+    "label": "tv",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.3,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "mweb",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.4,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "web_embedded",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.4,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "android_vr",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.1,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "tv_simply",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.0,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  },
+  {
+    "label": "skip_webpage",
+    "ok": false,
+    "comments": 0,
+    "sec": 0.9,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how t"
+  },
+  {
+    "label": "sort_new_nojson",
+    "ok": false,
+    "comments": 0,
+    "sec": 1.1,
+    "title": "",
+    "err": "ERROR: [youtube] oRhkf2hNcdQ: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i"
+  }
+]
