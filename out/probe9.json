@@ -1,0 +1,20 @@
+{
+ "search": {
+  "links": 0,
+  "hits": [],
+  "sample": []
+ },
+ "board_cn": {
+  "links": 0,
+  "hits": [],
+  "sample": []
+ },
+ "board_tw": {
+  "links": 0,
+  "hits": [],
+  "sample": []
+ },
+ "alt_domain": {
+  "fail": true
+ }
+}
