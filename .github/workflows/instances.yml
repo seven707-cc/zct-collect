@@ -1,0 +1,55 @@
+name: collect-via-instances
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'probe=只探测可用实例 / collect=正式采集'
+        required: false
+        default: 'probe'
+      video_id:
+        description: '单个视频 ID'
+        required: false
+        default: 'oRhkf2hNcdQ'
+      video_ids:
+        description: '多个视频 ID，逗号分隔（填了就覆盖上面）'
+        required: false
+        default: ''
+      max_comments:
+        description: '每条视频最多评论数，0=全量'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: python -m pip install -U pip requests
+
+      - name: Collect
+        env:
+          MODE: ${{ github.event.inputs.mode }}
+          VIDEO_ID: ${{ github.event.inputs.video_id }}
+          VIDEO_IDS: ${{ github.event.inputs.video_ids }}
+          MAX_COMMENTS: ${{ github.event.inputs.max_comments }}
+        run: python yt_instances.py
+
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f out/ || true
+          git commit -m "instances: $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "nothing"
+          git push || echo "push failed"
