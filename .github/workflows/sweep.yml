@@ -1,0 +1,47 @@
+name: proxy-sweep
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: '测试视频 ID'
+        required: false
+        default: 'oRhkf2hNcdQ'
+      max:
+        description: '评论测试条数'
+        required: false
+        default: '10'
+
+permissions:
+  contents: write
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: |
+          python -m pip install -U pip requests yt-dlp
+          yt-dlp --version
+
+      - name: Sweep proxies
+        env:
+          PROBE_VIDEO: ${{ github.event.inputs.video }}
+          PROBE_MAX: ${{ github.event.inputs.max }}
+        run: python proxy_sweep.py
+
+      - name: Commit result
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f proxy_result.json || true
+          git commit -m "sweep: $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "nothing"
+          git push || echo "push failed"
