@@ -1,5 +1,7 @@
 {
-  "videos": 10,
-  "comments": 173,
-  "instances_ok": 6
+  "videos": 75,
+  "comments": 0,
+  "failed": 75,
+  "bot_check": 75,
+  "cookies_loaded": false
 }
