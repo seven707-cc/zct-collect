@@ -1,36 +1,23 @@
 import json, requests
-H = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0 Safari/537.36"}
+H = {"User-Agent": "academic-research/0.1"}
+base = "https://arctic-shift.photon-reddit.com/api"
 tests = [
-    ("old.reddit",   "https://old.reddit.com/search.json", {"q": "Chinese Restaurant S9", "limit": 5}),
-    ("api.reddit",   "https://api.reddit.com/search.json", {"q": "Chinese Restaurant S9", "limit": 5}),
-    ("www.reddit",   "https://www.reddit.com/search.json", {"q": "Chinese Restaurant S9", "limit": 5}),
-    ("arctic-posts", "https://arctic-shift.photon-reddit.com/api/posts/search",
-     {"query": "Chinese Restaurant", "subreddit": "cdrama", "size": 5}),
-    ("arctic-comm",  "https://arctic-shift.photon-reddit.com/api/comments/search",
-     {"query": "Chinese Restaurant S9", "size": 5}),
-    ("hn-algolia",   "https://hn.algolia.com/api/v1/search", {"query": "chinese restaurant", "hitsPerPage": 5}),
+    ("posts q",  f"{base}/posts/search",    {"q": "Chinese Restaurant", "limit": 5, "sort": "desc"}),
+    ("posts cd", f"{base}/posts/search",    {"q": "Chinese Restaurant", "subreddit": "cdrama", "limit": 5}),
+    ("comm  q",  f"{base}/comments/search", {"q": "Chinese Restaurant", "limit": 5}),
+    ("comm cd",  f"{base}/comments/search", {"q": "Chinese Restaurant", "subreddit": "cdrama", "limit": 5}),
 ]
 for name, url, params in tests:
     try:
-        r = requests.get(url, params=params, headers=H, timeout=25)
-        body = r.text[:200].replace("\n", " ")
+        r = requests.get(url, params=params, headers=H, timeout=30)
         print(f"[{name}] {r.status_code} len={len(r.text)}")
-        print("   ", body)
         if r.status_code == 200:
-            try:
-                d = r.json()
-                if isinstance(d, dict):
-                    if "data" in d and "children" in d["data"]:
-                        print("    children:", len(d["data"]["children"]))
-                        for ch in d["data"]["children"][:3]:
-                            print("      -", ch["data"].get("title", "")[:70])
-                    elif "hits" in d:
-                        print("    hits:", len(d["hits"]))
-                    elif "data" in d and isinstance(d["data"], list):
-                        print("    data rows:", len(d["data"]))
-                        for x in d["data"][:3]:
-                            print("      -", str(x)[:120])
-            except Exception as e:
-                print("    json err", e)
+            d = r.json()
+            rows = d.get("data") or []
+            print("   rows:", len(rows))
+            for x in rows[:3]:
+                print("    -", x.get("subreddit"), "|", (x.get("title") or x.get("body") or "")[:80], "| score", x.get("score"))
+        else:
+            print("   ", r.text[:150])
     except Exception as e:
         print(f"[{name}] ERR {str(e)[:100]}")
