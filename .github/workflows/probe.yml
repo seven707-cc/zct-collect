@@ -1,0 +1,52 @@
+name: probe-clients
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: '探测用的视频 ID'
+        required: false
+        default: 'oRhkf2hNcdQ'
+      max:
+        description: '每组合最多抓多少条评论'
+        required: false
+        default: '20'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install yt-dlp
+        run: |
+          python -m pip install -U pip
+          python -m pip install -U yt-dlp
+          yt-dlp --version
+
+      - name: Show egress IP
+        run: |
+          echo "egress IP:"; curl -s --max-time 15 https://api.ipify.org || true; echo
+
+      - name: Probe comment clients
+        env:
+          PROBE_VIDEO: ${{ github.event.inputs.video }}
+          PROBE_MAX: ${{ github.event.inputs.max }}
+        run: python probe_comments.py
+
+      - name: Commit probe result
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f probe_result.json || true
+          git commit -m "probe: $(date -u +%Y-%m-%dT%H:%M:%SZ)" || echo "nothing"
+          git push || echo "push failed"
