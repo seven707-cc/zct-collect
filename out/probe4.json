@@ -1,0 +1,47 @@
+{
+ "ptt/CN_Entertain": {
+  "status": 403,
+  "hits": 0,
+  "items": []
+ },
+ "ptt/TW_Entertain": {
+  "status": 403,
+  "hits": 0,
+  "items": []
+ },
+ "ptt/CN_Ent": {
+  "status": 403,
+  "hits": 0,
+  "items": []
+ },
+ "dcard::中餐廳": {
+  "status": 403,
+  "n": 0
+ },
+ "dcard::中餐厅": {
+  "status": 403,
+  "n": 0
+ },
+ "lihkg::中餐廳": {
+  "status": 200,
+  "n": 24
+ },
+ "lihkg::中餐厅": {
+  "status": 200,
+  "n": 0
+ },
+ "ig::中餐厅": {
+  "err": "Expecting value: line 1 column 1 (char 0)"
+ },
+ "ig::chineserestaurant": {
+  "err": "Expecting value: line 1 column 1 (char 0)"
+ },
+ "tt::/search/general/full": {
+  "status": 200,
+  "head": "{\"log_pb\":{\"impr_id\":\"20261108031743B9157EA116A290CBC44A\"},\"status_code\":0,\"status_msg\":\"url doesn't match\"}"
+ },
+ "tt::/comment/list/": {
+  "status": 200,
+  "head": "{\"log_pb\":{\"impr_id\":\"20261108031743318023E09D006395246C\"},\"status_code\":5,\"status_msg\":\"\"}"
+ }
+}
