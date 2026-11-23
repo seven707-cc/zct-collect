@@ -1,69 +1,70 @@
-acmeSGfGpCY	BOT_CHECK
-oRhkf2hNcdQ	BOT_CHECK
-F-1oSt7prXQ	BOT_CHECK
-2ShVvki6VAM	BOT_CHECK
-ce_tjcL8oeI	BOT_CHECK
-v8CJKCKxX4Q	BOT_CHECK
-aUf_NiiiqnU	BOT_CHECK
-XpjPAWu522E	BOT_CHECK
-UMEQeGjuyx8	BOT_CHECK
-pEd3KtfdrnU	BOT_CHECK
-OQM4J0sqb7E	BOT_CHECK
-NCDdX40qwZg	BOT_CHECK
-D74QZhjDxFo	BOT_CHECK
-M-6yA-3iMOw	BOT_CHECK
-qYdejVkYWi0	BOT_CHECK
-YUEo252IpsA	BOT_CHECK
-Cp-oHYPhuP0	BOT_CHECK
-hdbwYMq_IcQ	BOT_CHECK
-w2oX2rgUvCM	BOT_CHECK
-41JfSiPGtBU	BOT_CHECK
-5751GBdJaOw	BOT_CHECK
-c9p7Lpdbf98	BOT_CHECK
-jO1z-j-ttng	BOT_CHECK
-JWDdn1k_Zb0	BOT_CHECK
-EOMhE5I1Igo	BOT_CHECK
-xc3bVTbA46k	BOT_CHECK
-uquUwyow_cU	BOT_CHECK
-KaZ3mUsuTAw	BOT_CHECK
-67x_qU5UJUA	BOT_CHECK
-KnZlBT1uqS0	BOT_CHECK
-WeoSFSFeibk	BOT_CHECK
-eZNmawxqg9Y	BOT_CHECK
-MU0qexL9obc	BOT_CHECK
-lJtttygX7D0	BOT_CHECK
-G_qswumkvlw	BOT_CHECK
-KZoXMNwSU88	BOT_CHECK
-MYRHo-E79iw	BOT_CHECK
-1Pz6riColcw	BOT_CHECK
-wZ0Z4HED08A	BOT_CHECK
-2zGdVZi3rSc	BOT_CHECK
-3TwjAP2tzWk	BOT_CHECK
-zhOGPQWumXw	BOT_CHECK
-REiBG3B8nI0	BOT_CHECK
-omUM-aA3_gc	BOT_CHECK
-3yaYAAIe5CM	BOT_CHECK
-v6TV-fuUMbw	BOT_CHECK
-gZj9z3LWNYQ	BOT_CHECK
-G5qVLPKSQUk	BOT_CHECK
-wGClrZIgmtE	BOT_CHECK
-jX9bSpUmwJ8	BOT_CHECK
-EBnhQZ0Dexg	BOT_CHECK
-KGDFwbrbYsk	BOT_CHECK
-geU4zYR_cWs	BOT_CHECK
-7kCPuMY-Q10	BOT_CHECK
-Nijhy5jrsSc	BOT_CHECK
-njn6krU3tQ8	BOT_CHECK
-Am3cJzNFfIg	BOT_CHECK
-pouKIooZS8U	BOT_CHECK
-MeVoMgN4JEc	BOT_CHECK
-Fo59LlkTDe4	BOT_CHECK
-KsHtOlpdsgc	BOT_CHECK
-qcnm0qMujE0	BOT_CHECK
-OzWFpKxqIIU	BOT_CHECK
-UPPkgdrFRRI	BOT_CHECK
-E8WvPHSMJ6c	BOT_CHECK
-wBDHAzIAZwM	BOT_CHECK
-YKZLTo93ULY	BOT_CHECK
-g6z4R64RMqo	BOT_CHECK
-vAMiyteJS_M	BOT_CHECK
+oRhkf2hNcdQ	ERROR: [youtube] oRhkf2hNcdQ: Video unavailable. This content isn’t available.
+acmeSGfGpCY	ERROR: [youtube] acmeSGfGpCY: Video unavailable. This content isn’t available.
+F-1oSt7prXQ	ERROR: [youtube] F-1oSt7prXQ: Video unavailable. This content isn’t available.
+pEd3KtfdrnU	ERROR: [youtube] pEd3KtfdrnU: Video unavailable. This content isn’t available.
+ce_tjcL8oeI	ERROR: [youtube] ce_tjcL8oeI: Video unavailable. This content isn’t available.
+2ShVvki6VAM	ERROR: [youtube] 2ShVvki6VAM: Video unavailable. This content isn’t available.
+qYdejVkYWi0	ERROR: [youtube] qYdejVkYWi0: Video unavailable. This content isn’t available.
+v8CJKCKxX4Q	ERROR: [youtube] v8CJKCKxX4Q: Video unavailable. This content isn’t available.
+XpjPAWu522E	ERROR: [youtube] XpjPAWu522E: Video unavailable. This content isn’t available.
+aUf_NiiiqnU	ERROR: [youtube] aUf_NiiiqnU: Video unavailable. This content isn’t available.
+OQM4J0sqb7E	ERROR: [youtube] OQM4J0sqb7E: Video unavailable. This content isn’t available.
+NCDdX40qwZg	ERROR: [youtube] NCDdX40qwZg: Video unavailable. This content isn’t available.
+tWlL8G8EOu4	ERROR: [youtube] tWlL8G8EOu4: Video unavailable. This content isn’t available.
+41JfSiPGtBU	ERROR: [youtube] 41JfSiPGtBU: Video unavailable. This content isn’t available.
+xDZmxrI9ZqU	ERROR: [youtube] xDZmxrI9ZqU: Video unavailable. This content isn’t available.
+YUEo252IpsA	ERROR: [youtube] YUEo252IpsA: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+Cp-oHYPhuP0	ERROR: [youtube] Cp-oHYPhuP0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+VtFqzBidjN8	ERROR: [youtube] VtFqzBidjN8: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+w2oX2rgUvCM	ERROR: [youtube] w2oX2rgUvCM: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+hdbwYMq_IcQ	ERROR: [youtube] hdbwYMq_IcQ: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+c9p7Lpdbf98	ERROR: [youtube] c9p7Lpdbf98: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+yGqx0-7BhTY	ERROR: [youtube] yGqx0-7BhTY: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+7VwSne42csc	ERROR: [youtube] 7VwSne42csc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+xc3bVTbA46k	ERROR: [youtube] xc3bVTbA46k: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+EOMhE5I1Igo	ERROR: [youtube] EOMhE5I1Igo: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+G2QsAwuJ6dk	ERROR: [youtube] G2QsAwuJ6dk: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+FYcVsNozjMA	ERROR: [youtube] FYcVsNozjMA: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+67x_qU5UJUA	ERROR: [youtube] 67x_qU5UJUA: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+KaZ3mUsuTAw	ERROR: [youtube] KaZ3mUsuTAw: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+JWDdn1k_Zb0	ERROR: [youtube] JWDdn1k_Zb0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+BIiwmOlpDro	ERROR: [youtube] BIiwmOlpDro: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+KnZlBT1uqS0	ERROR: [youtube] KnZlBT1uqS0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+WeoSFSFeibk	ERROR: [youtube] WeoSFSFeibk: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+lJtttygX7D0	ERROR: [youtube] lJtttygX7D0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+G_qswumkvlw	ERROR: [youtube] G_qswumkvlw: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+eZNmawxqg9Y	ERROR: [youtube] eZNmawxqg9Y: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+KZoXMNwSU88	ERROR: [youtube] KZoXMNwSU88: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+1Pz6riColcw	ERROR: [youtube] 1Pz6riColcw: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+wZ0Z4HED08A	ERROR: [youtube] wZ0Z4HED08A: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+RNMD6dCzXiU	ERROR: [youtube] RNMD6dCzXiU: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+2zGdVZi3rSc	ERROR: [youtube] 2zGdVZi3rSc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+3TwjAP2tzWk	ERROR: [youtube] 3TwjAP2tzWk: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+zhOGPQWumXw	ERROR: [youtube] zhOGPQWumXw: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+REiBG3B8nI0	ERROR: [youtube] REiBG3B8nI0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+omUM-aA3_gc	ERROR: [youtube] omUM-aA3_gc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+jX9bSpUmwJ8	ERROR: [youtube] jX9bSpUmwJ8: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+aYQVlkneHQk	ERROR: [youtube] aYQVlkneHQk: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+wGClrZIgmtE	ERROR: [youtube] wGClrZIgmtE: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+gZj9z3LWNYQ	ERROR: [youtube] gZj9z3LWNYQ: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+v6TV-fuUMbw	ERROR: [youtube] v6TV-fuUMbw: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+KGDFwbrbYsk	ERROR: [youtube] KGDFwbrbYsk: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+3yaYAAIe5CM	ERROR: [youtube] 3yaYAAIe5CM: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+yDfS61hVXnY	ERROR: [youtube] yDfS61hVXnY: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+8sZH3OXDbBA	ERROR: [youtube] 8sZH3OXDbBA: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+GyBNaY1LDk0	ERROR: [youtube] GyBNaY1LDk0: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+Nijhy5jrsSc	ERROR: [youtube] Nijhy5jrsSc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+njn6krU3tQ8	ERROR: [youtube] njn6krU3tQ8: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+Am3cJzNFfIg	ERROR: [youtube] Am3cJzNFfIg: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+MeVoMgN4JEc	ERROR: [youtube] MeVoMgN4JEc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+pouKIooZS8U	ERROR: [youtube] pouKIooZS8U: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+KsHtOlpdsgc	ERROR: [youtube] KsHtOlpdsgc: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+Fo59LlkTDe4	ERROR: [youtube] Fo59LlkTDe4: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+E8WvPHSMJ6c	ERROR: [youtube] E8WvPHSMJ6c: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+YKZLTo93ULY	ERROR: [youtube] YKZLTo93ULY: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+OzWFpKxqIIU	ERROR: [youtube] OzWFpKxqIIU: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+t2TGvr7DA6g	ERROR: [youtube] t2TGvr7DA6g: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+wBDHAzIAZwM	ERROR: [youtube] wBDHAzIAZwM: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+H258HMAtZU8	ERROR: [youtube] H258HMAtZU8: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+g6z4R64RMqo	ERROR: [youtube] g6z4R64RMqo: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
+3-z7tQRsN1I	ERROR: [youtube] 3-z7tQRsN1I: Failed to extract any player response; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you a
